@@ -1,0 +1,12 @@
+ [Unit]
+ Description=MPD GPIO Service
+ After=multi-user.target
+
+ [Service]
+ User=pi
+ Type=idle
+ ExecStart=/home/pi/dev/mpd/mpd_gpio.py > /home/pi/dev/mpd/mpd_gpio.log 2>&1
+ Restart=on-failure
+
+ [Install]
+ WantedBy=multi-user.target
